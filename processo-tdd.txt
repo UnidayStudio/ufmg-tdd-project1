@@ -1,0 +1,3 @@
+O processo TDD consiste em primeiro criar o mínimo viável para a execução do teste, que irá falhar por padrão (já que não há código algum) e seguir iterando até que esse teste passe.
+
+Ele sempre envolve escrever a menor quantidade de código possível seguida da execução dos testes unitários. Esse ciclo deve ser repetido até que os testes passem, o que vai significar que seu código está pronto.
