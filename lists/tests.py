@@ -16,7 +16,7 @@ class NewListTest(TestCase):
     def test_redirects_after_POST(self):
         response = self.client.post('/lists/new', data={'item_text': 'A new list item'})
         self.assertRedirects(response, '/lists/the-only-list-in-the-world/')
-        
+
 
 class ListViewTest(TestCase):
 
@@ -66,10 +66,6 @@ class HomePageTest(TestCase):
         self.assertIn('itemey 1', response.content.decode())
         self.assertIn('itemey 2', response.content.decode())
     
-    def test_only_saves_items_when_necessary(self):
-        self.client.get('/')
-        self.assertEqual(Item.objects.count(), 0)
-
     def test_uses_home_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
